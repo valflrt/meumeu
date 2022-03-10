@@ -1,5 +1,6 @@
 html,
-body {
+body,
+#root {
   width: 100%;
   height: 100%;
   padding: 0;
@@ -11,27 +12,42 @@ body {
 }
 
 :root {
+  --color-hue-1: #e2d1ff;
+  --color-hue-2: #fad1ff;
+  --color-hue-3: #ffd1ed;
+  --color-hue-4: #ffd1d5;
+  --color-hue-5: #ffe5d1;
+  --color-hue-6: #fff4d1;
+
+  --text: hsl(320, 30%, 12%);
 }
 
 body {
   margin: 0;
 
-  color: #0f0018;
+  color: var(--text);
   background: rgb(226, 209, 255);
   background: linear-gradient(
     45deg,
-    rgba(226, 209, 255, 1) 0%,
-    rgba(250, 209, 255, 1) 20%,
-    rgba(255, 209, 237, 1) 40%,
-    rgba(255, 209, 213, 1) 60%,
-    rgba(255, 229, 209, 1) 80%,
-    rgba(255, 244, 209, 1) 100%
+    var(--color-hue-1) 0%,
+    var(--color-hue-2) 20%,
+    var(--color-hue-3) 40%,
+    var(--color-hue-4) 60%,
+    var(--color-hue-5) 80%,
+    var(--color-hue-6) 100%
   );
 
   font-size: 18px;
-  font-family: "Fredoka", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Fredoka One", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 300;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
