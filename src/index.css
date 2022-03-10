@@ -12,9 +12,14 @@ body,
 }
 
 :root {
+  --color-shade-1: #ff6bc6;
+  --color-shade-2: #ff9eda;
+  --color-shade-3: #ffd1ed; /* main */
+  --color-shade-4: #ffebf7;
+
   --color-hue-1: #e2d1ff;
   --color-hue-2: #fad1ff;
-  --color-hue-3: #ffd1ed;
+  --color-hue-3: #ffd1ed; /* main */
   --color-hue-4: #ffd1d5;
   --color-hue-5: #ffe5d1;
   --color-hue-6: #fff4d1;
@@ -37,15 +42,17 @@ body {
     var(--color-hue-6) 100%
   );
 
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Fredoka One", "Lucida Sans", "Lucida Sans Regular",
     "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 #root {
+  padding: 0 20px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
