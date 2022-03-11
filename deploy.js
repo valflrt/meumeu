@@ -1,7 +1,7 @@
 const pages = require("gh-pages");
 
 pages.publish(
-  `${__dirname}/public`,
+  `${__dirname}/build`,
   {
     branch: "pages",
   },
