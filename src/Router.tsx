@@ -1,16 +1,15 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Home from "./routes/Home";
+import Drawing from "./routes/Drawing";
 
 const Router = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/test" element={<div>router test success !</div>} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/drawing/:id" element={<Drawing />} />
+    </Routes>
   );
 };
 
