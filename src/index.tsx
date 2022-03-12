@@ -10,7 +10,7 @@ import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename={location.href}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Layout>
         <Router />
       </Layout>
