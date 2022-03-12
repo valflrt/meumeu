@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "npm run build && node deploy.js",
+    "deploy": "PUBLIC_URL=\"https://valflrt.github.com/meumeu-website/\" npm run build && node deploy.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
