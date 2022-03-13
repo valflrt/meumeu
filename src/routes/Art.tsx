@@ -3,9 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import drawings from "../assets/drawings.json";
 
-import "./Drawing.css";
+import "./Art.css";
 
-const Drawing = () => {
+const Art = () => {
   let params = useParams();
   let navigate = useNavigate();
 
@@ -54,4 +54,4 @@ const Drawing = () => {
   );
 };
 
-export default Drawing;
+export default Art;
