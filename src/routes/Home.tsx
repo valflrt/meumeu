@@ -7,7 +7,7 @@ import "./Home.css";
 
 const Home = () => (
   <div>
-    Home !
+    Hello !
     <div className="grid">
       {drawings.map((d) => (
         <Link key={d.id} to={`/drawing/${d.id}`}>
@@ -16,8 +16,8 @@ const Home = () => (
               .replace("cdn.discordapp.com", "media.discordapp.net")
               .concat(
                 `?width=${Math.round(
-                  (250 * d.original.width) / d.original.height
-                ).toFixed()}&height=250`
+                  (150 * d.original.width) / d.original.height
+                ).toFixed()}&height=150`
               )}
             alt={`Drawing #${d.id}`}
           />

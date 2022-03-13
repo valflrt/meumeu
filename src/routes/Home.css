@@ -15,7 +15,7 @@ div.grid > a {
 
 div.grid > a > img {
   width: auto;
-  height: 250px;
+  height: 150px;
   border-radius: 8px;
   filter: grayscale(0.5);
   transition: 200ms;
