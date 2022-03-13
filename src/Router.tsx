@@ -9,6 +9,7 @@ const Router = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/drawing/:id" element={<Drawing />} />
+      <Route path="*" element={"There is nothing here !"} />
     </Routes>
   );
 };
