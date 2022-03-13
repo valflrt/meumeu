@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import drawings from "../assets/drawings.json";
 
@@ -7,6 +7,7 @@ import "./Drawing.css";
 
 const Drawing = () => {
   let params = useParams();
+  let navigate = useNavigate();
 
   let drawingRef = useRef<HTMLImageElement | null>(null);
   let [width, setWidth] = useState<number | undefined>(0);
@@ -18,12 +19,12 @@ const Drawing = () => {
 
   return (
     <>
-      <Link className="link" to={"/"}>
+      <span className="link" onClick={() => navigate(-1)}>
         Back
-      </Link>
+      </span>
       {drawing ? (
         <>
-          <div className="drawing-wrapper" id="drawing-wrapper">
+          <div className="drawing-wrapper">
             <img
               className="drawing"
               ref={drawingRef}

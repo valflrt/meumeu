@@ -1,9 +1,14 @@
 div.drawing-wrapper {
   width: 100%;
   padding: 6px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 div.drawing-wrapper > img.drawing {
   width: 100%;
+  max-width: 60%;
   border-radius: 8px;
 }
