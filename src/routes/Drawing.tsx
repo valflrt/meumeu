@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import drawings from "../assets/drawings.json";
 
@@ -12,6 +12,9 @@ const Drawing = () => {
   console.log(drawing);
   return (
     <>
+      <Link className="link" to={"/"}>
+        Back
+      </Link>
       {drawing ? (
         <img
           className="drawing"
