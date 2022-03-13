@@ -1,3 +1,9 @@
-div.content-wrapper > img.drawing {
+div.drawing-wrapper {
   width: 100%;
+  padding: 6px;
+}
+
+div.drawing-wrapper > img.drawing {
+  width: 100%;
+  border-radius: 8px;
 }
