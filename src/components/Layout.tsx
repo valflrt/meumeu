@@ -6,15 +6,11 @@ import "./Layout.css";
 const Layout: FunctionComponent = ({ children }) => {
   return (
     <>
-      <Link to={"/"}>
+      <div className="main">
         <h1 className="main-title">
-          meumeu<span className="dot">.</span>
+          <Link to={"/"}>meumeu.</Link>
         </h1>
-      </Link>
-      <div className="card-wrapper">
-        <div className="card">
-          <div className="content-wrapper">{children}</div>
-        </div>
+        <div className="content-wrapper">{children}</div>
       </div>
     </>
   );
