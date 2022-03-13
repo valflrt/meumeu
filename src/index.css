@@ -69,6 +69,7 @@ a {
   color: inherit;
 }
 
-a.link {
+.link {
   text-decoration: underline;
+  cursor: pointer;
 }
