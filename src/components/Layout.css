@@ -2,38 +2,14 @@
   width: 100%;
   height: 100%;
 
-  padding: 24px 32px;
-
-  border-radius: 16px;
-
-  background-color: rgba(255, 235, 247, 0.5);
-  backdrop-filter: blur(16px);
-
   display: flex;
   flex-direction: column;
 
   overflow-y: auto;
 }
 
-#root > div.main > h1.main-title {
-  margin: 0;
-
-  padding: 20px 0 40px;
-
-  font-size: 48px;
-  font-family: "Sansita Swashed";
-
-  align-self: center;
-}
-
-#root > div.card-wrapper {
+#root > div.main > div.content-wrapper {
   width: 100%;
   height: 100%;
-
-  padding: 10px 10px 30px 10px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: stretch;
+  padding: 20px 10%;
 }

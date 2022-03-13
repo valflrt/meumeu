@@ -1,0 +1,28 @@
+div.top-panel {
+  width: 100%;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.top-panel > h1.main-title {
+  margin: 0;
+
+  padding: 5px;
+
+  font-size: 48px;
+  font-family: "Sansita Swashed";
+}
+
+div.top-panel > div.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+div.top-panel > div.links > * {
+  padding: 0 4px;
+}
