@@ -9,13 +9,27 @@ const Art = () => {
   let params = useParams();
   let navigate = useNavigate();
 
+  let drawing = drawings.find((d) => d.id == params.id);
+
   let drawingRef = useRef<HTMLImageElement | null>(null);
   let [width, setWidth] = useState<number | undefined>(0);
   useEffect(() => {
-    setWidth(drawingRef.current ? drawingRef.current.offsetWidth : undefined);
-  }, [drawingRef.current]);
+    if (drawingRef.current?.offsetWidth && drawing) {
+      setWidth(drawingRef.current.offsetWidth);
 
-  let drawing = drawings.find((d) => d.id == params.id);
+      drawingRef.current.src = drawing.url
+        .replace("cdn.discordapp.com", "media.discordapp.net")
+        .concat(
+          `?width=${width}&height=${Math.round(
+            (width! * drawing.original.height) / drawing.original.width
+          ).toFixed()}`
+        );
+
+      drawingRef.current.addEventListener("load", () =>
+        drawingRef.current?.classList.remove("loading")
+      );
+    }
+  }, [drawingRef.current]);
 
   return (
     <>
@@ -26,22 +40,11 @@ const Art = () => {
         <>
           <div className="drawing-wrapper">
             <img
-              className="drawing"
+              className="drawing loading"
               ref={drawingRef}
-              src={
-                width
-                  ? drawing.url
-                      .replace("cdn.discordapp.com", "media.discordapp.net")
-                      .concat(
-                        `?width=${width}&height=${Math.round(
-                          (width * drawing.original.height) /
-                            drawing.original.width
-                        ).toFixed()}`
-                      )
-                  : drawing.url
-              }
               alt={`Drawing #${drawing.id}`}
             />
+            <div className="loader"> </div>
           </div>
           <a className="link" href={drawing.url} target="_blank">
             See full image
