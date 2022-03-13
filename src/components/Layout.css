@@ -13,3 +13,9 @@
   height: 100%;
   padding: 20px 10%;
 }
+
+@media screen and (max-width: 480px) {
+  #root > div.main > div.content-wrapper {
+    padding: 0;
+  }
+}
