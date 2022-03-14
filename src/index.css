@@ -69,6 +69,10 @@ a {
   color: inherit;
 }
 
+p {
+  margin: 0;
+}
+
 .link {
   text-decoration: underline;
   cursor: pointer;
