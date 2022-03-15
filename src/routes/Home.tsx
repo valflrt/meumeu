@@ -1,17 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import "./Home.css";
+import Button from "../particles/Button";
+
+import { RouterLinkStyle } from "../common.styles";
 
 const Home = () => {
   return (
     <>
       <p>
-        Wanna{" "}
-        <Link className="link" to="/about">
-          learn more
-        </Link>{" "}
-        about me :) ?
+        Wanna <RouterLinkStyle to="/about">learn more</RouterLinkStyle> about me
+        :) ?
       </p>
     </>
   );
