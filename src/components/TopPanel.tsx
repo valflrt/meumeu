@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import {
   LinksDivStyle,
-  LinkStyle,
   TitleStyle,
   ThaiDivStyle,
   TopPanelStyle,
   MainTitleStyle,
-} from "./TopPanelStyles";
+  TopPanelLinkStyle,
+} from "./TopPanel.styles";
 
 const TopPanel = () => (
   <TopPanelStyle>
@@ -22,10 +23,10 @@ const TopPanel = () => (
       </ThaiDivStyle>
     </MainTitleStyle>
     <LinksDivStyle>
-      <LinkStyle to={"/"}>Home</LinkStyle>
-      <LinkStyle to={"/arts"}>Arts</LinkStyle>
-      <LinkStyle to={"/about"}>About</LinkStyle>
-      <LinkStyle to={"/contact"}>Contact</LinkStyle>
+      <TopPanelLinkStyle to={"/"}>Home</TopPanelLinkStyle>
+      <TopPanelLinkStyle to={"/arts"}>Arts</TopPanelLinkStyle>
+      <TopPanelLinkStyle to={"/about"}>About</TopPanelLinkStyle>
+      <TopPanelLinkStyle to={"/contact"}>Contact</TopPanelLinkStyle>
     </LinksDivStyle>
   </TopPanelStyle>
 );

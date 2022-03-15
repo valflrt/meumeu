@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { RouterLinkStyle } from "../common.styles";
+
 export let TopPanelStyle = styled.div`
   width: 100%;
   padding: 10px;
@@ -29,7 +31,7 @@ export let ThaiDivStyle = styled.div`
   width: 120px;
 
   font-family: "Pridi";
-  font-size: 18px;
+  font-size: 20px;
   line-height: 8px;
 
   display: flex;
@@ -45,6 +47,6 @@ export let LinksDivStyle = styled.div`
   justify-content: center;
 `;
 
-export let LinkStyle = styled(Link)`
+export let TopPanelLinkStyle = styled(RouterLinkStyle)`
   padding: 0 4px;
 `;
