@@ -1,54 +1,58 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import drawings from "../assets/drawings.json";
+import CommonStyles from "../common.styles";
 
-import "./Art.css";
+import arts from "../assets/arts";
+import ArtStyles from "./Art.styles";
 
 const Art = () => {
   let params = useParams();
   let navigate = useNavigate();
 
-  let drawing = drawings.find((d) => d.id == params.id);
+  let art = arts.find((d) => d.id == params.id);
 
-  let drawingRef = useRef<HTMLImageElement | null>(null);
-  let [width, setWidth] = useState<number | undefined>(0);
+  let wrapperRef = useRef<HTMLDivElement | null>(null);
+  let imageRef = useRef<HTMLImageElement | null>(null);
+
+  let [loadState, setLoadState] = useState(false);
+
   useEffect(() => {
-    if (drawingRef.current?.offsetWidth && drawing) {
-      setWidth(drawingRef.current.offsetWidth);
+    if (imageRef.current) {
+      imageRef.current.addEventListener("load", () => setLoadState(!loadState));
+    }
+  }, [imageRef.current]);
 
-      drawingRef.current.src = drawing.url
+  useEffect(() => {
+    if (wrapperRef.current?.offsetWidth && imageRef.current && art) {
+      let width = wrapperRef.current.offsetWidth;
+      imageRef.current.src = art.url
         .replace("cdn.discordapp.com", "media.discordapp.net")
         .concat(
           `?width=${width}&height=${Math.round(
-            (width! * drawing.original.height) / drawing.original.width
+            (width! * art.original.height) / art.original.width
           ).toFixed()}`
         );
-
-      drawingRef.current.addEventListener("load", () =>
-        drawingRef.current?.classList.remove("loading")
-      );
     }
-  }, [drawingRef.current]);
+  }, [wrapperRef.current, imageRef.current, loadState]);
 
   return (
     <>
-      <span className="link" onClick={() => navigate(-1)}>
+      <CommonStyles.FakeLink onClick={() => navigate(-1)}>
         Back
-      </span>
-      {drawing ? (
+      </CommonStyles.FakeLink>
+      {art ? (
         <>
-          <div className="drawing-wrapper">
-            <img
-              className="drawing loading"
-              ref={drawingRef}
-              alt={`Drawing #${drawing.id}`}
+          <ArtStyles.ArtWrapper ref={wrapperRef}>
+            <ArtStyles.Image
+              ref={imageRef}
+              alt={`Drawing #${art.id}`}
+              style={!loadState ? { filter: "blur(2px)" } : undefined}
             />
-            <div className="loader"> </div>
-          </div>
-          <a className="link" href={drawing.url} target="_blank">
+          </ArtStyles.ArtWrapper>
+          <CommonStyles.Link href={art.url} target="_blank">
             See full image
-          </a>
+          </CommonStyles.Link>
         </>
       ) : (
         "Unknown drawing !"
