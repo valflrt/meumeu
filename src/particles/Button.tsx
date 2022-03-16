@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from "react";
+import React, { FunctionComponent, MouseEventHandler } from "react";
 
 import {
   TextButtonStyle,
@@ -11,7 +11,7 @@ interface IButtonProps {
   action: string | MouseEventHandler<HTMLParagraphElement>;
 }
 
-const Button = (props: IButtonProps) => (
+const Button: FunctionComponent<IButtonProps> = (props) => (
   <ButtonWrapperStyle>
     {typeof props.action === "string" ? (
       <RouterLinkButtonStyle to={props.action}>

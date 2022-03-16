@@ -10,7 +10,7 @@ export let ButtonStyle = styled.div`
   min-width: 80px;
   height: 40px;
 
-  padding: 5px 0;
+  padding: 5px;
 
   display: flex;
   align-items: center;
@@ -21,7 +21,10 @@ export let RouterLinkButtonStyle = styled(Link)`
   min-width: 80px;
   height: 40px;
 
-  padding: 5px 0;
+  padding: 20px 0;
+  border-radius: 20px;
+
+  background-color: #ffebf77f;
 
   text-decoration: none;
 
