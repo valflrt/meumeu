@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { RouterLinkStyle } from "../common.styles";
+import { RouterLink } from "../common.styles";
 
 export let TopPanelStyle = styled.div`
   width: 100%;
@@ -47,6 +47,6 @@ export let LinksDivStyle = styled.div`
   justify-content: center;
 `;
 
-export let TopPanelLinkStyle = styled(RouterLinkStyle)`
+export let TopPanelLinkStyle = styled(RouterLink)`
   padding: 0 4px;
 `;

@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import Button from "../particles/Button";
 
 import {
   LinksDivStyle,
@@ -7,7 +8,6 @@ import {
   ThaiDivStyle,
   TopPanelStyle,
   MainTitleStyle,
-  TopPanelLinkStyle,
 } from "./TopPanel.styles";
 
 const TopPanel = () => (
@@ -23,10 +23,10 @@ const TopPanel = () => (
       </ThaiDivStyle>
     </MainTitleStyle>
     <LinksDivStyle>
-      <TopPanelLinkStyle to={"/"}>Home</TopPanelLinkStyle>
-      <TopPanelLinkStyle to={"/arts"}>Arts</TopPanelLinkStyle>
-      <TopPanelLinkStyle to={"/about"}>About</TopPanelLinkStyle>
-      <TopPanelLinkStyle to={"/contact"}>Contact</TopPanelLinkStyle>
+      <Button action={"/"} label={"Home"} />
+      <Button action={"/arts"} label={"Arts"} />
+      <Button action={"/about"} label={"About"} />
+      <Button action={"/contact"} label={"Contact"} />
     </LinksDivStyle>
   </TopPanelStyle>
 );
