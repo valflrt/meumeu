@@ -1,32 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
-import drawings from "../assets/drawings.json";
+import ArtThumbnail from "../components/ArtThumbnail";
 
-import "./Arts.css";
+import ArtsStyles from "./Arts.style";
+
+import arts from "../assets/arts";
+
+import "./Arts.style.tsx";
 
 const Arts = () => {
   return (
-    <div className="grid">
-      {drawings.map((d) => (
-        <div className="item" key={d.id}>
-          <Link to={`/art/${d.id}`}>
-            <img
-              src={d.url
-                .replace("cdn.discordapp.com", "media.discordapp.net")
-                .concat(
-                  `?width=${
-                    250 /* Math.round(
-                      (250 * d.original.width) / d.original.height
-                    ).toFixed() */
-                  }&height=250`
-                )}
-              alt={`Drawing #${d.id}`}
-            />
-          </Link>
-        </div>
+    <ArtsStyles.Grid>
+      {arts.map((art) => (
+        <ArtThumbnail art={art} key={art.id} />
       ))}
-    </div>
+    </ArtsStyles.Grid>
   );
 };
 
