@@ -1,13 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link as DomLink } from "react-router-dom";
 import styled from "styled-components";
 
-export let LinkStyle = styled.a`
+export let Link = styled.a`
   text-decoration: underline;
   cursor: pointer;
 `;
 
-export let RouterLinkStyle = styled(Link)`
+export let RouterLink = styled(DomLink)`
   text-decoration: underline;
   cursor: pointer;
 `;
+
+export let FakeLink = styled.span`
+  text-decoration: underline;
+  cursor: pointer;
+`;
+
+export default {
+  Link,
+  RouterLink,
+  FakeLink,
+};
