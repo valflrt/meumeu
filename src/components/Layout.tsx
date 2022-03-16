@@ -2,14 +2,14 @@ import React, { FunctionComponent } from "react";
 
 import TopPanel from "./TopPanel";
 
-import "./Layout.css";
+import { ContentWrapper, MainWrapper } from "./Layout.styles";
 
 const Layout: FunctionComponent = ({ children }) => {
   return (
-    <div className="main">
+    <MainWrapper>
       <TopPanel />
-      <div className="content-wrapper">{children}</div>
-    </div>
+      <ContentWrapper>{children}</ContentWrapper>
+    </MainWrapper>
   );
 };
 
