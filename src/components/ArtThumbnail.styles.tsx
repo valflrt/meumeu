@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { RouterLink } from "../common.styles";
 
 export let Thumbnail = styled.div`
-  width: 49%;
   cursor: pointer;
 
   ${RouterLink} {
