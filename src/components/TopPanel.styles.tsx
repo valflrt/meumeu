@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link as DOMLink } from "react-router-dom";
 import styled from "styled-components";
 
 import { RouterLink } from "../common.styles";
 
-export let TopPanelStyle = styled.div`
+let TopPanel = styled.div`
   width: 100%;
   padding: 10px;
 
@@ -12,7 +12,7 @@ export let TopPanelStyle = styled.div`
   align-items: center;
 `;
 
-export let MainTitleStyle = styled(Link)`
+let MainTitle = styled(DOMLink)`
   padding: 5px;
 
   display: flex;
@@ -21,13 +21,13 @@ export let MainTitleStyle = styled(Link)`
   justify-content: center;
 `;
 
-export let TitleStyle = styled.h1`
+let Title = styled.h1`
   margin: 0;
   font-size: 48px;
   font-family: "Sansita Swashed";
 `;
 
-export let ThaiDivStyle = styled.div`
+let ThaiLettersWrapper = styled.div`
   width: 120px;
 
   font-family: "Pridi";
@@ -39,7 +39,7 @@ export let ThaiDivStyle = styled.div`
   justify-content: space-between;
 `;
 
-export let LinksDivStyle = styled.div`
+let LinksWrapper = styled.div`
   padding-top: 16px;
   display: flex;
   flex-direction: row;
@@ -47,6 +47,34 @@ export let LinksDivStyle = styled.div`
   justify-content: center;
 `;
 
-export let TopPanelLinkStyle = styled(RouterLink)`
-  padding: 0 4px;
+let Link = styled(RouterLink)`
+  padding: 0 2px;
 `;
+
+let LinkSeparator = styled.div`
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+
+  &:after {
+    content: "";
+    width: 4px;
+    height: 4px;
+
+    border-radius: 2px;
+    background-color: var(--text);
+
+    display: inline-block;
+  }
+`;
+
+export default {
+  TopPanel,
+  MainTitle,
+  Title,
+  ThaiLettersWrapper,
+  LinksWrapper,
+  Link,
+  LinkSeparator,
+};

@@ -1,34 +1,29 @@
 import React from "react";
 
-import Button from "../particles/Button";
-
-import {
-  LinksDivStyle,
-  TitleStyle,
-  ThaiDivStyle,
-  TopPanelStyle,
-  MainTitleStyle,
-} from "./TopPanel.styles";
+import TopPanelStyles from "./TopPanel.styles";
 
 const TopPanel = () => (
-  <TopPanelStyle>
-    <MainTitleStyle to={"/"}>
-      <TitleStyle>meumeu.</TitleStyle>
-      <ThaiDivStyle>
+  <TopPanelStyles.TopPanel>
+    <TopPanelStyles.MainTitle to={"/"}>
+      <TopPanelStyles.Title>meumeu.</TopPanelStyles.Title>
+      <TopPanelStyles.ThaiLettersWrapper>
         <span>เ</span>
         <span>มิ</span>
         <span>อ</span>
         <span>ะ</span>
         <span>ๆ</span>
-      </ThaiDivStyle>
-    </MainTitleStyle>
-    <LinksDivStyle>
-      <Button action={"/"} label={"Home"} />
-      <Button action={"/arts"} label={"Arts"} />
-      <Button action={"/about"} label={"About"} />
-      <Button action={"/contact"} label={"Contact"} />
-    </LinksDivStyle>
-  </TopPanelStyle>
+      </TopPanelStyles.ThaiLettersWrapper>
+    </TopPanelStyles.MainTitle>
+    <TopPanelStyles.LinksWrapper>
+      <TopPanelStyles.Link to={"/"}>Home</TopPanelStyles.Link>
+      <TopPanelStyles.LinkSeparator />
+      <TopPanelStyles.Link to={"/arts"}>Arts</TopPanelStyles.Link>
+      <TopPanelStyles.LinkSeparator></TopPanelStyles.LinkSeparator>
+      <TopPanelStyles.Link to={"/about"}>About</TopPanelStyles.Link>
+      <TopPanelStyles.LinkSeparator></TopPanelStyles.LinkSeparator>
+      <TopPanelStyles.Link to={"/contact"}>Contact</TopPanelStyles.Link>
+    </TopPanelStyles.LinksWrapper>
+  </TopPanelStyles.TopPanel>
 );
 
 export default TopPanel;
