@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 
-import TopPanel from "./TopPanel";
+import TopPanel from "../components/TopPanel";
 
 import { ContentWrapper, MainWrapper } from "./Layout.styles";
 
