@@ -9,13 +9,18 @@ export let MainWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  overflow-y: auto;
+  overflow: hidden auto;
 `;
 
 export let ContentWrapper = styled.div`
-  width: 500px;
+  max-width: 500px;
 
   padding: 20px 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
 
   @media screen and (max-width: 540px) {
     width: 100%;
