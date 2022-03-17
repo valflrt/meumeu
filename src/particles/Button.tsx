@@ -1,25 +1,26 @@
-import React, { FunctionComponent, MouseEventHandler } from "react";
+import React, { FunctionComponent, HTMLProps } from "react";
+import { Link, LinkProps } from "react-router-dom";
 
 import {
-  TextButtonStyle,
-  ButtonWrapperStyle,
-  RouterLinkButtonStyle,
-} from "./Button.styles";
+  StyledComponentProps,
+  StyledInterface,
+  StyledProps,
+} from "styled-components";
 
-interface IButtonProps {
-  label: string;
-  action: string | MouseEventHandler<HTMLParagraphElement>;
-}
+import ButtonStyles from "./Button.styles";
 
-const Button: FunctionComponent<IButtonProps> = (props) => (
+const Button = (props: StyledProps<HTMLDivElement>) => (
+  <ButtonStyles.ButtonWrapper>
+    <ButtonStyles.Button {...props} />{" "}
+    {/* contentEditable is fucking everything up */}
+  </ButtonStyles.ButtonWrapper>
+);
+
+export const RouterButton: FunctionComponent<LinkProps> = (props) => (
   <ButtonWrapperStyle>
-    {typeof props.action === "string" ? (
-      <RouterLinkButtonStyle to={props.action}>
-        {props.label}
-      </RouterLinkButtonStyle>
-    ) : (
-      <TextButtonStyle onClick={props.action}>{props.label}</TextButtonStyle>
-    )}
+    <Link to={props.to}>
+      <ButtonStyles.Button>{props.children}</ButtonStyles.Button>
+    </Link>
   </ButtonWrapperStyle>
 );
 

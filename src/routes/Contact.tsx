@@ -1,16 +1,17 @@
 import React from "react";
-import linked from "styled-components";
 import { Instagram } from "react-feather";
 
-import "./Contact.css";
+import Button from "../particles/Button";
 
 const Contact = () => {
   return (
     <>
-      <a className="icon-link" href={""} target={"_blank"}>
-        Instagram
-        <Instagram size={24} />
-      </a>
+      <Button>
+        
+          Instagram
+          <Instagram size={24} />
+        
+      </Button>
     </>
   );
 };
