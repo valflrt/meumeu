@@ -12,29 +12,9 @@ const Art = () => {
 
   let art = arts.find((d) => d.id == params.id);
 
-  let wrapperRef = useRef<HTMLDivElement | null>(null);
-  let imageRef = useRef<HTMLImageElement | null>(null);
+  let [imageRef, setImageRef] = useState<HTMLImageElement | null>();
 
-  let [loadState, setLoadState] = useState(false);
-
-  useEffect(() => {
-    if (imageRef.current) {
-      imageRef.current.addEventListener("load", () => setLoadState(!loadState));
-    }
-  }, [imageRef.current]);
-
-  useEffect(() => {
-    if (wrapperRef.current?.offsetWidth && imageRef.current && art) {
-      let width = wrapperRef.current.offsetWidth;
-      imageRef.current.src = art.url
-        .replace("cdn.discordapp.com", "media.discordapp.net")
-        .concat(
-          `?width=${width}&height=${Math.round(
-            (width! * art.original.height) / art.original.width
-          ).toFixed()}`
-        );
-    }
-  }, [wrapperRef.current, imageRef.current, loadState]);
+  let [loading, setLoading] = useState(true);
 
   return (
     <>
@@ -43,16 +23,41 @@ const Art = () => {
       </CommonStyles.FakeLink>
       {art ? (
         <>
-          <ArtStyles.ArtWrapper ref={wrapperRef}>
-            <ArtStyles.Image
-              ref={imageRef}
-              alt={`Drawing #${art.id}`}
-              style={!loadState ? { filter: "blur(2px)" } : undefined}
-            />
+          <ArtStyles.ArtWrapper>
+            <ArtStyles.ImageWrapper href={art.url} target="_blank">
+              <ArtStyles.Image
+                alt={`Drawing #${art.id}`}
+                ref={setImageRef}
+                src={art.url
+                  .replace("cdn.discordapp.com", "media.discordapp.net")
+                  .concat(
+                    imageRef
+                      ? `?width=${imageRef.offsetWidth}&height=${Math.round(
+                          (imageRef.offsetWidth * art.original.height) /
+                            art.original.width
+                        ).toFixed()}`
+                      : `?width=${100}&height=${Math.round(
+                          (100 * art.original.height) / art.original.width
+                        ).toFixed()}`
+                  )}
+                onLoad={() => setLoading(false)}
+              />
+              {loading ? (
+                <ArtStyles.Placeholder>
+                  <ArtStyles.PlaceholderImage
+                    src={art.url
+                      .replace("cdn.discordapp.com", "media.discordapp.net")
+                      .concat(
+                        `?width=${100}&height=${Math.round(
+                          (100 * art.original.height) / art.original.width
+                        ).toFixed()}`
+                      )}
+                  />
+                  <ArtStyles.PlaceholderImageCache />
+                </ArtStyles.Placeholder>
+              ) : null}
+            </ArtStyles.ImageWrapper>
           </ArtStyles.ArtWrapper>
-          <CommonStyles.Link href={art.url} target="_blank">
-            See full image
-          </CommonStyles.Link>
         </>
       ) : (
         "Unknown drawing !"
