@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export let Grid = styled.div`
+let Grid = styled.div`
+  width: 100%;
+
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
