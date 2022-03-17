@@ -36,7 +36,6 @@ body {
   margin: 0;
 
   color: var(--text);
-  background: rgb(226, 209, 255);
   background: linear-gradient(
     45deg,
     var(--color-hue-1) 0%,
@@ -48,11 +47,11 @@ body {
   );
 
   font-size: 16px;
-  font-family: "Fredoka One", "Lucida Sans", "Lucida Sans Regular",
-    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Fredoka", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 #root {
