@@ -5,6 +5,7 @@ import { RouterLink } from "../common.styles";
 export let Thumbnail = styled.div`
   width: 49%;
   cursor: pointer;
+
   ${RouterLink} {
     width: 100%;
     height: 100%;
@@ -19,7 +20,7 @@ export let ImageContainer = styled.div`
 
 export let Image = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 8px;
 `;
 
