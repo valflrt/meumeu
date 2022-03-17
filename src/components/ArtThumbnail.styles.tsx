@@ -23,19 +23,38 @@ export let Image = styled.img`
   border-radius: 8px;
 `;
 
-export let ImageCover = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+export let Placeholder = styled.div`
   width: 100%;
   height: 100%;
-  z-index: 10;
-  backdrop-filter: blur(20px);
+  top: 0;
+  left: 0;
+
+  position: absolute;
+`;
+
+export let PlaceholderImage = styled.img`
+  width: 100%;
+  height: 100%;
   border-radius: 8px;
+`;
+
+export let PlaceholderImageCache = styled.div`
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+
+  position: absolute;
 `;
 
 export default {
   Thumbnail,
   ImageContainer,
   Image,
+  Placeholder,
+  PlaceholderImage,
+  PlaceholderImageCache,
 };
