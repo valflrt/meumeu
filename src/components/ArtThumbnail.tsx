@@ -18,7 +18,6 @@ const ArtThumbnail: FunctionComponent<{ art: IArtObject }> = ({ art }) => {
             alt={`Drawing #${art.id}`}
             ref={setImageRef}
             src={art.url
-              .replace("cdn.discordapp.com", "media.discordapp.net")
               .concat(
                 imageRef
                   ? `?width=${imageRef.offsetWidth}&height=${imageRef.offsetWidth}`
@@ -30,7 +29,6 @@ const ArtThumbnail: FunctionComponent<{ art: IArtObject }> = ({ art }) => {
             <ArtThumbnailStyles.Placeholder>
               <ArtThumbnailStyles.PlaceholderImage
                 src={art.url
-                  .replace("cdn.discordapp.com", "media.discordapp.net")
                   .concat(`?width=32&height=32`)}
               />
               <ArtThumbnailStyles.PlaceholderImageCache />

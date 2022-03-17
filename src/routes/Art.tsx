@@ -28,30 +28,26 @@ const Art = () => {
               <ArtStyles.Image
                 alt={`Drawing #${art.id}`}
                 ref={setImageRef}
-                src={art.url
-                  .replace("cdn.discordapp.com", "media.discordapp.net")
-                  .concat(
-                    imageRef
-                      ? `?width=${imageRef.offsetWidth}&height=${Math.round(
-                          (imageRef.offsetWidth * art.original.height) /
-                            art.original.width
-                        ).toFixed()}`
-                      : `?width=${100}&height=${Math.round(
-                          (100 * art.original.height) / art.original.width
-                        ).toFixed()}`
-                  )}
+                src={art.url.concat(
+                  imageRef
+                    ? `?width=${imageRef.offsetWidth}&height=${Math.round(
+                        (imageRef.offsetWidth * art.original.height) /
+                          art.original.width
+                      ).toFixed()}`
+                    : `?width=${100}&height=${Math.round(
+                        (100 * art.original.height) / art.original.width
+                      ).toFixed()}`
+                )}
                 onLoad={() => setLoading(false)}
               />
               {loading ? (
                 <ArtStyles.Placeholder>
                   <ArtStyles.PlaceholderImage
-                    src={art.url
-                      .replace("cdn.discordapp.com", "media.discordapp.net")
-                      .concat(
-                        `?width=${100}&height=${Math.round(
-                          (100 * art.original.height) / art.original.width
-                        ).toFixed()}`
-                      )}
+                    src={art.url.concat(
+                      `?width=${100}&height=${Math.round(
+                        (100 * art.original.height) / art.original.width
+                      ).toFixed()}`
+                    )}
                   />
                   <ArtStyles.PlaceholderImageCache />
                 </ArtStyles.Placeholder>
