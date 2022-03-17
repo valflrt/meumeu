@@ -6,7 +6,7 @@ import { IArtObject } from "../types";
 import ArtThumbnailStyles from "./ArtThumbnail.styles";
 
 const ArtThumbnail: FunctionComponent<{ art: IArtObject }> = ({ art }) => {
-  let [placeHolderRef, setPlaceHolderRef] = useState<HTMLImageElement | null>();
+  let [imageRef, setImageRef] = useState<HTMLImageElement | null>();
 
   let [loading, setLoading] = useState(true);
 
@@ -16,12 +16,12 @@ const ArtThumbnail: FunctionComponent<{ art: IArtObject }> = ({ art }) => {
         <ArtThumbnailStyles.ImageContainer>
           <ArtThumbnailStyles.Image
             alt={`Drawing #${art.id}`}
-            ref={(ref) => setPlaceHolderRef(ref)}
+            ref={setImageRef}
             src={art.url
               .replace("cdn.discordapp.com", "media.discordapp.net")
               .concat(
-                placeHolderRef
-                  ? `?width=${placeHolderRef.offsetWidth}&height=${placeHolderRef.offsetWidth}`
+                imageRef
+                  ? `?width=${imageRef.offsetWidth}&height=${imageRef.offsetWidth}`
                   : `?width=32&height=32`
               )}
             onLoad={() => setLoading(false)}
