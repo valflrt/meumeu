@@ -1,15 +1,21 @@
 import React, { FunctionComponent } from "react";
+import { Instagram } from "react-feather";
 
 import TopPanel from "../components/TopPanel";
 
-import { ContentWrapper, MainWrapper } from "./Layout.styles";
+import LayoutStyles from "./Layout.styles";
 
 const Layout: FunctionComponent = ({ children }) => {
   return (
-    <MainWrapper>
+    <LayoutStyles.MainWrapper>
       <TopPanel />
-      <ContentWrapper>{children}</ContentWrapper>
-    </MainWrapper>
+      <LayoutStyles.ContentWrapper>{children}</LayoutStyles.ContentWrapper>
+      <LayoutStyles.LinksWrapper>
+        <a href={"https://www.instagram.com/meumeu.17/"} target={"_blank"}>
+          <Instagram className="icon" size={28} />
+        </a>
+      </LayoutStyles.LinksWrapper>
+    </LayoutStyles.MainWrapper>
   );
 };
 
