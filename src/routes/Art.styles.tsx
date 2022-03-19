@@ -20,6 +20,7 @@ export let ImageWrapper = styled(commonStyles.Link)`
 export let Image = styled.img`
   width: 100%;
   max-width: 800px;
+  height: auto;
   border-radius: 8px;
 `;
 
