@@ -52,17 +52,17 @@ let Link = styled(RouterLink)`
 `;
 
 let LinkSeparator = styled.div`
-  padding: 0 4px;
+  padding: 0 8px;
 
   display: flex;
   align-items: center;
 
   &:after {
     content: "";
-    width: 4px;
-    height: 4px;
+    width: 2px;
+    height: 2px;
 
-    border-radius: 2px;
+    border-radius: 50%;
     background-color: var(--text);
 
     display: inline-block;
