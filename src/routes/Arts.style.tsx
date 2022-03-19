@@ -22,6 +22,13 @@ let Grid = styled.div`
       height: 120px;
     }
   }
+
+  @media screen and (min-width: 1200px) {
+    ${ArtThumbnailStyles.Thumbnail} {
+      width: 220px;
+      height: 220px;
+    }
+  }
 `;
 
 export default {
