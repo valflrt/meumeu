@@ -6,7 +6,8 @@ const Home = () => {
   return (
     <>
       <p>
-        Wanna <RouterLink to="/about">learn more</RouterLink> about my work :) ?
+        Wanna <RouterLink to={"/about"}>learn more</RouterLink> about my work :)
+        ?
       </p>
     </>
   );

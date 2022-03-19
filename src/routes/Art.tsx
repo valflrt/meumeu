@@ -24,7 +24,7 @@ const Art = () => {
       {art ? (
         <>
           <ArtStyles.ArtWrapper>
-            <ArtStyles.ImageWrapper href={art.url} target="_blank">
+            <ArtStyles.ImageWrapper href={art.url} target={"_blank"}>
               <ArtStyles.Image
                 alt={`Drawing #${art.id}`}
                 ref={setImageRef}

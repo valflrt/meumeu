@@ -12,7 +12,7 @@ const Layout: FunctionComponent = ({ children }) => {
       <LayoutStyles.ContentWrapper>{children}</LayoutStyles.ContentWrapper>
       <LayoutStyles.LinksWrapper>
         <a href={"https://www.instagram.com/meumeu.17/"} target={"_blank"}>
-          <Instagram className="icon" size={28} />
+          <Instagram className={"icon"} size={28} />
         </a>
       </LayoutStyles.LinksWrapper>
     </LayoutStyles.MainWrapper>
